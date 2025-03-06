@@ -1,6 +1,5 @@
 // Question Link: https://leetcode.com/problems/create-hello-world-function/description/?envType=study-plan-v2&envId=30-days-of-javascript
-// Solution Link: https://leetcode.com/problems/create-hello-world-function/solutions/5424082/easy-javascript-solution/
-
+// Solution Link: https://leetcode.com/problems/create-hello-world-function/solutions/6504244/create-hello-world-function-solution-by-mifeb/
 
 /*
 2667. Create Hello World Function
@@ -21,21 +20,18 @@ Explanation:
 const f = createHelloWorld();
 f({}, null, 42); // "Hello World"
 Any arguments could be passed to the function but it should still always return "Hello World".
- 
+
 Constraints:
 0 <= args.length <= 10
 */
 
-
 /**
  * @return {Function}
  */
-var createHelloWorld = function() {
-    
-    return function(...args) {
-        
-        return "Hello World";
-    }
+var createHelloWorld = function () {
+  return function (...args) {
+    return "Hello World";
+  };
 };
 
 /**
