@@ -47,12 +47,12 @@ var map = function (arr, fn) {
 
 // 2nd Approach: Using forEach Loop - TC = O(n), SC = O(n)
 
-var map = function (arr, fn) {
-  let result = [];
+// var map = function (arr, fn) {
+//   let result = [];
 
-  arr.forEach((val, index) => {
-    result.push(fn(val, index));
-  });
+//   arr.forEach((val, index) => {
+//     result.push(fn(val, index));
+//   });
 
-  return result;
-};
+//   return result;
+// };
