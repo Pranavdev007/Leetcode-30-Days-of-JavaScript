@@ -35,40 +35,21 @@ Constraints:
 -10^9 <= arr[i] <= 10^9
 */
 
-
-
 /**
  * @param {number[]} arr
  * @param {Function} fn
  * @return {number[]}
  */
 
-// 1st Approch: Using for Loop - TC = O(n), SC = O(n)
-/*
-var filter = function(arr, fn) {
-    let filteredArr = [];
-    let x = 0;
+// Approach: Using forEach Loop - TC = O(n), SC = O(n)
+var filter = function (arr, fn) {
+  let filteredArr = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        if (fn(arr[i], i)) {
-            // filteredArr.push(arr[i]);
-            filteredArr[x++] = arr[i];
-        }
+  arr.forEach((val, index) => {
+    if (fn(val, index)) {
+      filteredArr.push(val);
     }
+  });
 
-    return filteredArr;
-};
-*/
-
-// 2nd Approach: Using forEach Loop - TC = O(n), SC = O(n)
-var filter = function(arr, fn) {
-    let filteredArr = [];
-
-    arr.forEach((val, index) => {
-        if (fn(val, index)) {
-            filteredArr.push(val);
-        }
-    });
-
-    return filteredArr;
+  return filteredArr;
 };
