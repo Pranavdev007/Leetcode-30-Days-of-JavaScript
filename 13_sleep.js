@@ -1,5 +1,4 @@
 // Question Link: https://leetcode.com/problems/sleep/description/?envType=study-plan-v2&envId=30-days-of-javascript
-// Solution Link: https://leetcode.com/problems/sleep/solutions/5439384/easy-one-line-javascript-solution/
 
 /*
 2621. Sleep
