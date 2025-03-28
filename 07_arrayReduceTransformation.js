@@ -36,29 +36,15 @@ Constraints:
  * @return {number}
  */
 
-/*
 // Approach 1: Using for Loop - TC = O(n), SC = O(1)
-var reduce = function(nums, fn, init) {
-    let result = init;
-
-    if (nums.length !== 0) {
-        for (let i = 0; i < nums.length; i++) {
-            result = fn(result, nums[i]);
-        }
-    }
-
-    return result;
-};
-*/
-
-// Approach 2: Using forEach Loop - TC = O(n), SC = O(1)
 var reduce = function (nums, fn, init) {
   let result = init;
 
-  nums.length &&
-    nums.forEach((num) => {
-      result = fn(result, num);
-    });
+  if (nums.length !== 0) {
+    for (let i = 0; i < nums.length; i++) {
+      result = fn(result, nums[i]);
+    }
+  }
 
   return result;
 };
