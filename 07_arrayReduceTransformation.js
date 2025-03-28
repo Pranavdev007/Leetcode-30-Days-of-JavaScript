@@ -1,5 +1,4 @@
 // Question Link: https://leetcode.com/problems/array-reduce-transformation/description/?envType=study-plan-v2&envId=30-days-of-javascript
-// Solution Link: https://leetcode.com/problems/array-reduce-transformation/solutions/5434806/2-javascript-easy-solution-using-for-loop-and-foreach-loop/
 
 /*
 2626. Array Reduce Transformation
@@ -23,33 +22,12 @@ initially, the value is init=0.
 (3) + nums[2] = 6
 (6) + nums[3] = 10
 The final answer is 10.
-Example 2:
-Input: 
-nums = [1,2,3,4]
-fn = function sum(accum, curr) { return accum + curr * curr; }
-init = 100
-Output: 130
-Explanation:
-initially, the value is init=100.
-(100) + nums[0] * nums[0] = 101
-(101) + nums[1] * nums[1] = 105
-(105) + nums[2] * nums[2] = 114
-(114) + nums[3] * nums[3] = 130
-The final answer is 130.
-Example 3:
-Input: 
-nums = []
-fn = function sum(accum, curr) { return 0; }
-init = 25
-Output: 25
-Explanation: For empty arrays, the answer is always init.
  
 Constraints:
 0 <= nums.length <= 1000
 0 <= nums[i] <= 1000
 0 <= init <= 1000
 */
-
 
 /**
  * @param {number[]} nums
@@ -73,14 +51,14 @@ var reduce = function(nums, fn, init) {
 };
 */
 
-
 // Approach 2: Using forEach Loop - TC = O(n), SC = O(1)
-var reduce = function(nums, fn, init) {
-    let result = init;
+var reduce = function (nums, fn, init) {
+  let result = init;
 
-    nums.length && nums.forEach((num) => {
-        result = fn(result, num);
+  nums.length &&
+    nums.forEach((num) => {
+      result = fn(result, num);
     });
 
-    return result;
+  return result;
 };
