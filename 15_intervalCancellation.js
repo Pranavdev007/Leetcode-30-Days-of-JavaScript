@@ -32,30 +32,6 @@ Every 35ms, fn(4) is called. Until t=190ms, then it is cancelled.
 6th fn call is at 175ms. fn(4) returns 8.
 Cancelled at 190ms
 
-Example 2:
-Input: fn = (x1, x2) => (x1 * x2), args = [2, 5], t = 30
-Output: 
-[
-   {"time": 0, "returned": 10},
-   {"time": 30, "returned": 10},
-   {"time": 60, "returned": 10},
-   {"time": 90, "returned": 10},
-   {"time": 120, "returned": 10},
-   {"time": 150, "returned": 10}
-]
-Explanation: 
-const cancelTimeMs = 165; 
-const cancelFn = cancellable((x1, x2) => (x1 * x2), [2, 5], 30) 
-setTimeout(cancelFn, cancelTimeMs)
-Every 30ms, fn(2, 5) is called. Until t=165ms, then it is cancelled.
-1st fn call is at 0ms 
-2nd fn call is at 30ms 
-3rd fn call is at 60ms 
-4th fn call is at 90ms 
-5th fn call is at 120ms 
-6th fn call is at 150ms
-Cancelled at 165ms
-
 
 /**
  * @param {Function} fn
