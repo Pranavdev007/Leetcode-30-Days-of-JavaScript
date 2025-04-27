@@ -30,47 +30,37 @@ Input: functions = [
 Output: {"t": 100, "rejected": "Error"}
 Explanation: Since one of the promises rejected, the returned promise also rejected with the same error at the same time.
 
-Example 3:
-Input: functions = [
-    () => new Promise(resolve => setTimeout(() => resolve(4), 50)), 
-    () => new Promise(resolve => setTimeout(() => resolve(10), 150)), 
-    () => new Promise(resolve => setTimeout(() => resolve(16), 100))
-]
-Output: {"t": 150, "resolved": [4, 10, 16]}
-Explanation: All the promises resolved with a value. The returned promise resolved when the last promise resolved.
  
 Constraints:
 functions is an array of functions that returns promises
 1 <= functions.length <= 10
 */
 
-
-
 /**
  * @param {Array<Function>} functions
  * @return {Promise<any>}
  */
-var promiseAll = function(functions) {
+var promiseAll = function (functions) {
+  return new Promise((resolve, reject) => {
+    const output = [];
+    let count = functions.length;
 
-    return new Promise((resolve, reject) => {
-        const output = [];
-        let count = functions.length;
+    for (let i = 0; i < functions.length; i++) {
+      functions[i]()
+        .then((response) => {
+          output[i] = response;
+          count--;
 
-        for (let i = 0; i < functions.length; i++) {
-            functions[i]().then((response) => {
-                output[i] = response;
-                count--;
-
-                if(count === 0) {
-                    return resolve(output);
-                }
-            }).catch(reject);
-        }
-    })
+          if (count === 0) {
+            return resolve(output);
+          }
+        })
+        .catch(reject);
+    }
+  });
 };
 
 /**
  * const promise = promiseAll([() => new Promise(res => res(42))])
  * promise.then(console.log); // [42]
  */
-
