@@ -1,5 +1,4 @@
 // Question Link: https://leetcode.com/problems/chunk-array/description/?envType=study-plan-v2&envId=30-days-of-javascript
-// Solution Link: https://leetcode.com/problems/chunk-array/solutions/5446329/javascript-easy-solution/
 
 /*
 2677. Chunk Array
@@ -15,40 +14,17 @@ Input: arr = [1,2,3,4,5], size = 1
 Output: [[1],[2],[3],[4],[5]]
 Explanation: The arr has been split into subarrays each with 1 element.
 
-Example 2:
-Input: arr = [1,9,6,3,2], size = 3
-Output: [[1,9,6],[3,2]]
-Explanation: The arr has been split into subarrays with 3 elements. However, only two elements are left for the 2nd subarray.
-
-Example 3:
-Input: arr = [8,5,3,2,6], size = 6
-Output: [[8,5,3,2,6]]
-Explanation: Size is greater than arr.length thus all elements are in the first subarray.
-
-Example 4:
-Input: arr = [], size = 1
-Output: []
-Explanation: There are no elements to be chunked so an empty array is returned.
- 
-Constraints:
-arr is a valid JSON array
-2 <= JSON.stringify(arr).length <= 10^5
-1 <= size <= arr.length + 1
-*/
-
-
-
 /**
  * @param {Array} arr
  * @param {number} size
  * @return {Array}
  */
-var chunk = function(arr, size) {
-    let ans = [] ;
+var chunk = function (arr, size) {
+  let ans = [];
 
-    while (arr.length > 0){
-      ans.push(arr.splice(0,size));
-    }
+  while (arr.length > 0) {
+    ans.push(arr.splice(0, size));
+  }
 
-    return ans;
+  return ans;
 };
